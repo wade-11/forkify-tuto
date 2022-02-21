@@ -35,9 +35,7 @@ const showRecipe = async function () {
 
     // 2. Rendering Recipe
     recipeView.render(model.state.recipe);
-    // controlServings();
   } catch (err) {
-    //alert(err);
     recipeView.renderError();
   }
 };
@@ -54,7 +52,6 @@ const controllerSearch = async function () {
     await model.loadSearchResult(query);
 
     // Render Results
-    // resultsView.render(model.state.search.results);
     resultsView.render(model.getSearchResultsPage());
 
     // Render specific pagination
@@ -77,7 +74,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipe servings in view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
